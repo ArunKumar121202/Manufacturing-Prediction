@@ -21,8 +21,7 @@ st.markdown(
 st.title("🧪 PET Bottle Demand Predictor")
 
 # Load model and preprocessor
-model = joblib.load("best_model.pkl")  # Should include preprocessor
-# (Make sure your model pipeline is saved using joblib.dump(pipeline, "best_model_pipeline.pkl"))
+model = joblib.load("best_model.pkl")  # Should include preprocessing pipeline
 
 # Input fields
 region = st.selectbox("Region", ["South America", "Europe", "North America", "Asia"])
@@ -65,7 +64,8 @@ if st.button("Predict Volume (Million Pieces)"):
         "Day": [day]
     }
 
-    input_df = np.array(pd.DataFrame(input_data))
+    # Do NOT convert to NumPy array — keep as DataFrame with column names
+    input_df = pd.DataFrame(input_data)
 
     # Prediction
     prediction = model.predict(input_df)
