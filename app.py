@@ -20,7 +20,7 @@ st.markdown(
 st.title("🧪 PET Bottle Demand Predictor")
 
 # Load model and preprocessor
-model = joblib.load("best_model_pipeline.pkl")  # Should include preprocessor
+model = joblib.load("best_model.pkl")  # Should include preprocessor
 # (Make sure your model pipeline is saved using joblib.dump(pipeline, "best_model_pipeline.pkl"))
 
 # Input fields
