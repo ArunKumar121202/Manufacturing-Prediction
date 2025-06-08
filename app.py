@@ -24,14 +24,14 @@ def login():
         if username == VALID_USERNAME and password == VALID_PASSWORD:
             st.session_state.logged_in = True
             st.success("Login successful! ✅")
-            st.experimental_rerun()
+            st.rerun()  # ✅ Updated here
         else:
             st.error("Invalid username or password ❌")
 
 # Logout function
 def logout():
     st.session_state.logged_in = False
-    st.experimental_rerun()
+    st.rerun()  # ✅ Updated here
 
 # Logged-in view
 def demand_predictor():
