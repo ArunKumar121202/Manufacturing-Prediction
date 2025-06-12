@@ -88,8 +88,8 @@ def demand_predictor():
     date = st.date_input(
         "Date of Requirement",
         value=datetime.date(2023, 1, 1),
-        min_value=datetime.date(2020, 1, 1),
-        max_value=datetime.date(2025, 12, 31)
+        min_value=datetime.date(2019, 1, 3),
+        max_value=datetime.date(2023, 12, 31)
     )
 
     year, month, day = date.year, date.month, date.day
